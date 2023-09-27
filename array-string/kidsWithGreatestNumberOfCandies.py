@@ -16,3 +16,12 @@ class Solution:
             canHaveMaxCandies = (candy + extraCandies) >= maxNumCandies
             candies[idx] = canHaveMaxCandies
         return candies
+
+    def kidsWithCandies1(self, candies: List[int], extraCandies: int) -> List[bool]:
+        res = [False] * len(candies)
+        for i in range(len(candies)):
+            if candies[i] + extraCandies >= max(candies):
+                res[i] = True
+            else:
+                res[i] = False
+        return res
